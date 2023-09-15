@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './assets/login/logo-full-white.png';
 import './App.css';
+import { LoginButton } from './components/Button/Button.style';
+import Header from './components/Header/Header';
 
 function App() {
   return (
+    <>
+    <Header></Header>
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+        MANUTENÇÃO
+        <br></br>
+         <LoginButton>Entrar</LoginButton>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      
       </header>
     </div>
+    </>
   );
 }
 
