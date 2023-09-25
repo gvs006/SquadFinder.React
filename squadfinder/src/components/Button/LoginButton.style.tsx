@@ -3,11 +3,12 @@ import "./styles.css";
 
 
 export const LoginButton = styled.button`
+margin-top: 60px;
   font-family: var(--font-sans);
   font-weight: var(--font-weight-6);
   font-size: var(--font-size-5);
-  color: var(--gray-8);
-  background: #BF4F74;
+  color: #fff;
+  background: #A1A2B2;
   border: 0;
   padding: var(--size-4) var(--size-8);
   transform: translateY(calc(var(--y, 0) * 1%)) scale(var(--scale));
@@ -31,7 +32,7 @@ export const LoginButton = styled.button`
   content: "";
   position: absolute;
   inset: calc(var(--size-3) * -1);
-  border: var(--size-2) solid #1abc9c;
+  border: var(--size-2) solid #2B3080;
   border-radius: 8px;
   transform: scale(var(--border-scale, 0));
   transition: transform 0.125s;

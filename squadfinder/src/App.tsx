@@ -1,16 +1,16 @@
 import React from "react";
 import logo from "./assets/login/logo-full-white.png";
-import "./App.css";
-import { LoginButton } from "./components/Button/Button.style";
 import { Col, Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 import Header from "./components/Header/Header";
+import { BrowserRouter } from "react-router-dom";
+import { AppRoutes } from "./routes";
 
 export const ContainerStyle = styled.div`
   text-align: center;
+  width: 100%;
   height: 100vh;
-  background-color: #fff;
-
+  background-color: #ffffff;
 `;
 
 function App() {
@@ -20,8 +20,10 @@ function App() {
         <Header></Header>
         <Container fluid>
           <Row>
-            <Col>
-              <LoginButton>Entrar</LoginButton>
+            <Col style={{display:'flex', justifyContent:'center'}}>
+              <BrowserRouter>
+                <AppRoutes />
+              </BrowserRouter>
             </Col>
           </Row>
         </Container>
