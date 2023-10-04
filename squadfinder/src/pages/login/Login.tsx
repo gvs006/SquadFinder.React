@@ -1,28 +1,29 @@
 import { useState } from "react";
-import { LoginButton } from "../../components/Button/LoginButton.style";
 import Input from "../../components/Input/Input";
 import { Form } from "../../components/Form/Form";
+import CustomLoginButton from "../../components/CustomLoginButton/CustomLoginButton.style";
 
 
 export default function Login() {
-  const [input, setInput] = useState("");
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <>
     <Form>
-
       <Input
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        name="InputOutlined"
+        value={user}
+        onChange={(e) => setUser(e.target.value)}
         label="Usuário ou Email"
       />
       <Input
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        name="InputOutlined"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
         label="Senha"
       />
-      <LoginButton>Entrar</LoginButton>
+      <div>Esqueceu sua senha?</div>
+      <div>Clique <a href="/">aqui</a></div>
+      <CustomLoginButton href={""} label={"Entrar"}></CustomLoginButton>
     </Form>
         
         

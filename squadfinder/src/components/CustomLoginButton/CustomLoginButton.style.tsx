@@ -2,7 +2,7 @@ import styled from "styled-components";
 import "./styles.css";
 
 
-export const LoginButton = styled.button`
+export const StyledButton = styled.button`
 margin-top: 60px;
   font-family: var(--font-sans);
   font-weight: var(--font-weight-6);
@@ -20,6 +20,7 @@ margin-top: 60px;
   --y: -10;
   --scale: 1.1;
   --border-scale: 1;
+  color: #2B3080;
 }
 
 &:active {
@@ -52,8 +53,17 @@ margin-top: 60px;
     transparent var(--end-one) var(--start-two),
     white var(--start-two) var(--end-two),
     transparent var(--end-two)
-  )
+  );
   
   z-index: -1;
 }
 `
+
+export default function CustomLoginButton({ href, label }){
+
+  return(
+    <a href={href}>    
+      <StyledButton>{label}</StyledButton>
+    </a>
+  )
+}

@@ -3,6 +3,7 @@ import logo from "../../assets/login/logo-full-white.png";
 import darklogo from "../../assets/login/logo-full.png"
 import img from "../../assets/login/hero-bg-pqn.jpg"
 import styled from "styled-components";
+import { Col, Row } from "react-bootstrap";
 
 export const HeaderStyle = styled.div`
   background-image: linear-gradient(180deg, #00000011 0%, #ffffff 88.02%), url(${img});
@@ -24,8 +25,10 @@ function Header() {
   const isLight: boolean = true;
   
   return (
-    <>
-    { isLight &&
+    
+    <Row>
+      <Col>
+      { isLight &&
       <HeaderStyle>
         <img src={logo} alt="logo" />
       </HeaderStyle>}
@@ -35,7 +38,12 @@ function Header() {
        <img src={darklogo} alt="logo" />
        
       </DarkHeaderStyle>}
-    </>
+      
+      </Col>
+      
+    </Row>
+    
+    
   );
 }
 
