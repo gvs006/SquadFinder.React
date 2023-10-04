@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
+
 
 export const Form = styled.form`
   background-color: #fff;

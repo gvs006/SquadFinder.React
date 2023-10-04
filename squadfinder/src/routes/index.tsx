@@ -11,7 +11,7 @@ export const AppRoutes = () => {
       <Route path="/login" element={<Login></Login>} />
       <Route path="/erro" element={<ErrorPage></ErrorPage>} />
       
-      <Route path="*" element={<Navigate to="/home" />} />
+      <Route path="*" element={<Navigate to="/erro" />} />
     </Routes>
   );
 }

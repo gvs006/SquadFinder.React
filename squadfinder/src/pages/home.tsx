@@ -1,10 +1,9 @@
-import { Badge, Button, Card, Col, Container, Row } from "react-bootstrap";
 import "../styles.scss";
 
 export default function Home() {
   return (
     <>
-
+{/* <Container>
       <Row style={{marginBottom:"90px"}}>
           <Col>
           <Badge bg="outline-success" as={Button} href="/register">
@@ -23,9 +22,9 @@ export default function Home() {
         <Row>
           <Col>
             <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Img variant="top" src="../assets/cardgray180w100h.png" />
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>Card Title 1</Card.Title>
                 <Card.Text>
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
@@ -39,7 +38,7 @@ export default function Home() {
             <Card style={{ width: "18rem" }}>
               <Card.Img variant="top" src="holder.js/100px180" />
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>Card Title 2</Card.Title>
                 <Card.Text>
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
@@ -53,7 +52,7 @@ export default function Home() {
             <Card style={{ width: "18rem" }}>
               <Card.Img variant="top" src="holder.js/100px180" />
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>Card Title 3</Card.Title>
                 <Card.Text>
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
@@ -63,7 +62,7 @@ export default function Home() {
             </Card>
           </Col>
         </Row>
-
+        </Container> */}
     </>
   );
 }

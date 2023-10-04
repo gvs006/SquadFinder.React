@@ -1,4 +1,5 @@
-import styled from "styled-components";
+
+import styled from "@emotion/styled";
 import "./styles.css";
 
 
@@ -59,11 +60,10 @@ margin-top: 60px;
 }
 `
 
-export default function CustomLoginButton({ href, label }){
+export default function CustomLoginButton({ label, onClick, onSubmit}){
 
   return(
-    <a href={href}>    
       <StyledButton>{label}</StyledButton>
-    </a>
+    
   )
 }
