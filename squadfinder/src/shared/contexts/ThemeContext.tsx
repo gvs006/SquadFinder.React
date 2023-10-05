@@ -35,8 +35,15 @@ export const AppThemeProvider: React.FC<Props> = ({ children }) => {
      return DarkTheme;
     },[themeName]);
 
-    const style = {
+    const headerStyle = {
         backgroundImage:`linear-gradient(180deg, #00000011 0%, #ffffff 88.02%), url(${Image})`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize:"100% auto",
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
     };
 
 
@@ -49,15 +56,15 @@ export const AppThemeProvider: React.FC<Props> = ({ children }) => {
                 height="100vh"
                 style={{ 
                     background: theme.palette.background.default,
-                    
                 }}
                 >
                     <Box 
                 width="100%" 
                 height="50vh"
-                style={style}
-                ><img src={logo} alt="logo" /></Box>
-
+                style={headerStyle} >
+                    
+                <Header></Header>
+                 </Box>
 
                     {children}
                 </Box>
