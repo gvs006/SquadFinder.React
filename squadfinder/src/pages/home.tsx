@@ -7,7 +7,6 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
-import Header from "../components/Header/Header";
 
 export default function Home() {
   const bull = (
@@ -70,52 +69,6 @@ export default function Home() {
         <Card style={{ width: "20rem" }}>{card}</Card>
       </Grid>
 
-      
-      {/* 
-    
-          <Badge bg="outline-success" as={Button} href="/register">
-              Cadastrar
-            </Badge>
-            ou
-
-            Entrar clicando
-            <Badge bg="outline-success" as={Button} href="/login">
-              AQUI
-            </Badge>
-       
-
-        
-            
-       
-
-          <Col>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Card Title 2</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-
-          <Col>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Card Title 3</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-         
-        */}
     </>
   );
 }
