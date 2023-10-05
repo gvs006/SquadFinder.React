@@ -11,7 +11,7 @@ export const HeaderStyle = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% auto;
-  height: 50vh;
+  height: 100%;
   width: 100%;
 `;
 

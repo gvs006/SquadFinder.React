@@ -5,33 +5,22 @@ import CustomLoginButton from "../../components/CustomLoginButton/CustomLoginBut
 import Swal from "sweetalert2";
 
 export default function Login() {
-  const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
+  const [userInput, setUserInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
 
-  const handleEntrar = () => {
 
-    if(!user || !password) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Algo deu errado!",
-        footer: '<a href="">Porque estou tendo esse problema?</a>',
-      });
-    }
-   
-  };
 
   return (
     <>
       <Form>
         <Input
-          value={user}
-          onChange={(e) => setUser(e.target.value)}
+          value={userInput}
+          onChange={(e) => setUserInput(e.target.value)}
           label="Usuário ou Email"
         />
         <Input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={passwordInput}
+          onChange={(e) => setPasswordInput(e.target.value)}
           label="Senha"
           type="password"
         />
@@ -41,8 +30,6 @@ export default function Login() {
         </div>
         <CustomLoginButton
           label={"Entrar"}
-          onSubmit={(e) => handleEntrar()}
-          onClick={console.log("Clicado")}
         ></CustomLoginButton>
       </Form>
     </>

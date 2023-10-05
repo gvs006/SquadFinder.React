@@ -60,7 +60,7 @@ margin-top: 60px;
 }
 `
 
-export default function CustomLoginButton({ label, onClick, onSubmit}){
+export default function CustomLoginButton({ label}){
 
   return(
       <StyledButton>{label}</StyledButton>
