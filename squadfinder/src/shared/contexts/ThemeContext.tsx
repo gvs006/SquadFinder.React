@@ -60,7 +60,7 @@ export const AppThemeProvider: React.FC<Props> = ({ children }) => {
                 >
                     <Box 
                 width="100%" 
-                height="50vh"
+                height="45vh"
                 style={headerStyle} >
                     
                 <Header></Header>

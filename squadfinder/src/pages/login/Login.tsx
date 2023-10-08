@@ -7,35 +7,11 @@ import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import Chip from "@mui/material/Chip";
 import Link from "@mui/material/Link";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import styled from "@emotion/styled";
-import { useAppThemeContext } from "../../shared/contexts";
 import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 
 // TODO
-
-const ImageSrc = styled("span")({
-  position: "absolute",
-  left: 0,
-  right: 0,
-  top: 0,
-  bottom: 0,
-  backgroundSize: "cover",
-  backgroundPosition: "center 40%",
-});
-
-const Image = styled("span")(({ theme }) => ({
-  position: "absolute",
-  left: 0,
-  right: 0,
-  top: 0,
-  bottom: 0,
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
 
 export default function Login() {
   const [userInput, setUserInput] = useState("");
@@ -43,16 +19,19 @@ export default function Login() {
 
   return (
     <>
-      <Box width="100%" height="50vh" display="flex" justifyContent="center">
-        <Paper variant={"elevation"} elevation={24} square={false}>
+      <Box width="100%" height="55vh" display="flex" justifyContent="center">
+        <Paper variant={"elevation"} elevation={24} square={false}
+        style={{minWidth:"33%", display: "flex", justifyContent:"center"}} 
+        >
           <Form>
-            
-                  <Box marginBottom="40px" display="flex" justifyContent="space-around">
+                  <Box marginBottom="40px" ml={3} display="flex" justifyContent="space-around">
                     <Tooltip title="Login com o Google">
+                    <IconButton style={{ height: 48, width: 48 }}>
                       <svg
                 className="MuiSvgIcon-root-76"
                 viewBox="0 0 48 48"
-                style={{ marginLeft: -12, marginRight: 12, height: 24, width: 24 }}
+                style={{ height: 48, width: 48 }}
+                
               >
                 <g>
                   <path
@@ -73,35 +52,36 @@ export default function Login() {
                   ></path>
                 </g>
                       </svg>
+                      </IconButton>
                     </Tooltip>
                   
                     <Tooltip title="Login com o Facebook">
+                  <IconButton style={{ height: 48, width: 48 }}>
                       <svg
                         className="MuiSvgIcon-root-76"
                         viewBox="0 0 34 33"
-                        style={{
-                          marginLeft: -12,
-                          marginRight: 12,
-                          height: 24,
-                          width: 24,
-                        }}
+                        style={{ height: 48, width: 48 }}
                       >
                         <path
                           fill="#4267B2"
                           d="M17 0C7.887 0 .5 7.425.5 16.585c0 8.315 6.093 15.181 14.033 16.38V20.981h-4.082v-4.36h4.082v-2.902c0-4.803 2.328-6.91 6.3-6.91 1.902 0 2.907.14 3.384.205v3.805h-2.71c-1.686 0-2.275 1.607-2.275 3.418v2.383h4.942l-.67 4.36h-4.27V33C27.288 31.904 33.5 24.981 33.5 16.585 33.5 7.425 26.113 0 17 0z"
                         ></path>
                       </svg>
+                    </IconButton>
                     </Tooltip>
                     
                     <Tooltip title="Login com Apple ID">
+                    <IconButton style={{ height: 48, width: 48 }}>
                       <svg
               className="MuiSvgIcon-root-76"
               viewBox="0 0 1000 1187.198"
-              style={{ marginLeft: -12, marginRight: 12, height: 24, width: 24 }}
+              style={{ height: 34, width: 46, paddingBottom:"6px" }}
             >
               <path d="M979.042 925.188c-17.954 41.477-39.206 79.657-63.828 114.759-33.563 47.853-61.044 80.976-82.222 99.37-32.83 30.192-68.006 45.654-105.672 46.533-27.041 0-59.652-7.694-97.611-23.303-38.085-15.536-73.084-23.23-105.086-23.23-33.563 0-69.56 7.694-108.061 23.23-38.561 15.609-69.625 23.743-93.376 24.55-36.12 1.538-72.123-14.364-108.06-47.78-22.938-20.006-51.627-54.302-85.997-102.888-36.875-51.883-67.191-112.047-90.942-180.639C12.751 781.703 0 709.96 0 640.504c0-79.562 17.192-148.183 51.627-205.687 27.063-46.19 63.066-82.625 108.127-109.373 45.06-26.748 93.749-40.378 146.182-41.25 28.69 0 66.312 8.874 113.066 26.315 46.622 17.5 76.557 26.374 89.682 26.374 9.812 0 43.068-10.376 99.443-31.064 53.313-19.185 98.307-27.129 135.168-24 99.883 8.062 174.923 47.436 224.828 118.372-89.33 54.126-133.52 129.936-132.64 227.188.806 75.751 28.287 138.788 82.295 188.84 24.476 23.23 51.81 41.183 82.222 53.934-6.595 19.127-13.557 37.447-20.958 55.035zM749.964 23.75c0 59.374-21.692 114.81-64.928 166.122-52.176 61-115.286 96.248-183.724 90.686a184.836 184.836 0 01-1.378-22.497c0-56.999 24.813-117.998 68.878-167.874 21.999-25.253 49.978-46.25 83.907-63 33.856-16.5 65.88-25.625 95.999-27.187.88 7.937 1.246 15.875 1.246 23.75z"></path>
                       </svg>
+                      </IconButton>
                     </Tooltip>
+                 
               </Box>
              
             
@@ -112,6 +92,7 @@ export default function Login() {
             </Divider>
             </Box>
 
+<Box mb={3}>
             <Input
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
@@ -123,15 +104,19 @@ export default function Login() {
               label="Senha"
               type="password"
             />
-            {/* <div></div>
-             */}
+            </Box>
+          
+          <Typography mt={0} mb={2} fontSize={12} textAlign="center">
             <Link href="/recover-password">Esqueci minha senha.</Link>
+            </Typography>
             <Divider>
               <Chip label="ou" />
             </Divider>
-            <div>
-              Cadastre-se <a href="/register">aqui</a>
-            </div>
+            <Typography mt={2} variant="body2" textAlign="center">
+            
+              Cadastre-se <Link href="/register">aqui.</Link>
+            
+            </Typography>
 
             <CustomLoginButton label={"Entrar"} />
           </Form>

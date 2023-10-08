@@ -1,11 +1,15 @@
 import styled from "@emotion/styled";
 import "./styles.css";
 import LinearProgress from "@mui/material/LinearProgress";
-import { ButtonHTMLAttributes, MouseEventHandler, useState } from "react";
+import { useState } from "react";
 import Box from "@mui/material/Box";
+import { useAppThemeContext } from "../../shared/contexts";
+
+
+
 
 export const StyledButton = styled.button`
-  margin-top: 50px;
+  margin-top: 12px;
   font-family: var(--font-sans);
   font-weight: var(--font-weight-6);
   font-size: var(--font-size-5);
@@ -61,6 +65,8 @@ export const StyledButton = styled.button`
 `;
 
 export default function CustomLoginButton({ label }) {
+
+  const theme = useAppThemeContext();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [userData, setUserData] = useState<string[]>([""]);
