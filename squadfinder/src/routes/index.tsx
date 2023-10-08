@@ -13,7 +13,7 @@ export const AppRoutes = () => {
       <Route path="/register" element={<Register></Register>} />
       <Route path="/erro" element={<ErrorPage></ErrorPage>} />
       
-      <Route path="*" element={<Navigate to="/erro" />} />
+      <Route path="*" element={<Navigate to="/login" />} />
     </Routes>
   );
 }

@@ -10,6 +10,9 @@ export const ContainerInput = styled.div`
 
     input {
       font-size: 14px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+        Noto Sans, sans-serif, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans,
+        sans-serif;
       padding: 12px 12px 7px;
       display: block;
       width: 100%;
