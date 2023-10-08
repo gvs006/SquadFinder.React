@@ -36,7 +36,7 @@ export const AppThemeProvider: React.FC<Props> = ({ children }) => {
     },[themeName]);
 
     const headerStyle = {
-        backgroundImage:`linear-gradient(180deg, #00000011 0%, #ffffff 88.02%), url(${Image})`,
+        backgroundImage: themeName !== 'dark' ? `linear-gradient(180deg, #00000011 0%, #ffffff 88.02%), url(${Image})` : `linear-gradient(180deg, #00000011 0%, #020000 88.02%), url(${Image})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize:"100% auto",

@@ -10,6 +10,10 @@ import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
 import CustomLoginButton from "../../components/CustomLoginButton/CustomLoginButton.style";
 import Link from "@mui/material/Link";
+import FormLabel from "@mui/material/FormLabel";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Radio from "@mui/material/Radio";
 
 export const Register = () => {
   
@@ -68,16 +72,22 @@ export const Register = () => {
                 <Input
                 value={passwordConfirmInput}
                 onChange={(e) => setPasswordConfirmInput(e.target.value)}
-                label="Data de Nascimento [DD-MM-YYYY]"
+                label=""
                 type="date"
               />
 
-                <Input
-                value={passwordConfirmInput}
-                onChange={(e) => setPasswordConfirmInput(e.target.value)}
-                label="Sexo"
-                type="radio"
-              />
+<FormLabel id="demo-radio-buttons-group-label">Gênero</FormLabel>
+  <RadioGroup
+  row
+    aria-labelledby="demo-radio-buttons-group-label"
+    defaultValue="Feminino"
+    name="row-radio-buttons-group"
+  >
+    <FormControlLabel value="Feminino" control={<Radio />} label="Feminino" />
+    <FormControlLabel value="Masculino" control={<Radio />} label="Masculino" />
+    <FormControlLabel value="Outro" control={<Radio />} label="Outro" />
+    
+  </RadioGroup>
 
               </Box>
             
