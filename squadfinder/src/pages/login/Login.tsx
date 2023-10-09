@@ -10,7 +10,6 @@ import Link from "@mui/material/Link";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import { useAppThemeContext } from "../../shared/contexts";
 
 // TODO
 
@@ -18,16 +17,16 @@ export default function Login() {
   const [userInput, setUserInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
 
-  const theme = useAppThemeContext();
+
 
   return (
     <>
-      <Box width="100%" height="55vh" display="flex" justifyContent="center">
+      <Box width="100%" height="55vh" display="flex" justifyContent="center" >
         <Paper variant={"elevation"} elevation={24} square={false}
         style={{minWidth:"33%", display: "flex", justifyContent:"center"}} 
         >
           <Form>
-                  <Box marginBottom="40px" ml={3} display="flex" justifyContent="space-around">
+                  <Box marginBottom="40px" display="flex" justifyContent="space-around">
                     <Tooltip title="Login com o Google">
                     <IconButton style={{ height: 48, width: 48 }}>
                       <svg

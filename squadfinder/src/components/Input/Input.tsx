@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import Box from "@mui/material/Box";
+
 
 
 export const ContainerInput = styled.div`
@@ -18,7 +20,9 @@ export const ContainerInput = styled.div`
       width: 100%;
       border: none;
       border-radius: 8px;
-      color: rgb(116, 132, 143);
+      
+      color: #74848f;
+      
       &:focus {
         outline: none;
       }
@@ -74,13 +78,15 @@ export const ContainerInput = styled.div`
 `;
 
 const Input = ({ label, value, ...rest }) => {
+
+  
     return (
       <ContainerInput>
-        <div className="input-outline">
+        <Box className="input-outline">
           <input type="text" {...rest} value={value} placeholder="" />
           <span className="border" />
           <label>{label}</label>
-        </div>
+        </Box>
       </ContainerInput>
     );
   };

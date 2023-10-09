@@ -3,7 +3,7 @@ import "./styles.css";
 import LinearProgress from "@mui/material/LinearProgress";
 import { useState } from "react";
 import Box from "@mui/material/Box";
-import { useAppThemeContext } from "../../shared/contexts";
+
 
 
 
@@ -66,7 +66,6 @@ export const StyledButton = styled.button`
 
 export default function CustomLoginButton({ label }) {
 
-  const theme = useAppThemeContext();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [userData, setUserData] = useState<string[]>([""]);
