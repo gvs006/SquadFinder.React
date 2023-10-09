@@ -120,7 +120,13 @@ export default function Login() {
             
             </Typography>
 
-            <CustomLoginButton label={"Entrar"} />
+            <Typography mt={2} variant="body2" textAlign="center">
+            
+              TESTE <Link href="/secured">SECURED.</Link>
+            
+            </Typography>
+
+            <CustomLoginButton label={"Entrar"}/>
           </Form>
         </Paper>
       </Box>

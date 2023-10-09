@@ -3,6 +3,7 @@ import Login from '../pages/login/Login';
 import Home from '../pages/home';
 import ErrorPage from '../pages/error/Error';
 import { Register } from '../pages/register/Register';
+import Secured from '../pages/dashboard/Secured';
 
 export const AppRoutes = () => {
 
@@ -12,6 +13,7 @@ export const AppRoutes = () => {
       <Route path="/login" element={<Login></Login>} />
       <Route path="/register" element={<Register></Register>} />
       <Route path="/erro" element={<ErrorPage></ErrorPage>} />
+      <Route path="/secured" element={<Secured></Secured>} />
       
       <Route path="*" element={<Navigate to="/login" />} />
     </Routes>

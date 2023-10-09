@@ -91,12 +91,16 @@ export default function CustomLoginButton({ label }) {
   return (
     <>
     <Box display="flex" justifyContent="center">
+    
     <StyledButton>
+
       <Box  onClick={fc.clickHandler} >
       {label}
-      {isLoading && <LinearProgress color="primary" />}
+      {isLoading && <LinearProgress color="primary" /> }
       </Box>
+
     </StyledButton>
+   
 
     </Box>
     </>
