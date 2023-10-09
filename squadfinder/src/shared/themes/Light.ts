@@ -6,19 +6,19 @@ export const LightTheme = createTheme({
   palette: {
     primary: {
       main: '#2B3080',
-      dark: '#A1A2B2',
+      dark: '#0C0E26',
       light: yellow[500],
       contrastText: '#ffffff',
     },
     secondary: {
-      main: cyan[500],
-      dark: cyan[400],
-      light: cyan[300],
+      main: '#ffffff',
+      dark: '#A1A2B2',
+      light: '#ffffff',
       contrastText: '#ffffff',
     },
     background: {
       paper: '#ffffff',
-      default: "#ffffff",
+      default: '#ffffff',
     }
   }
 });

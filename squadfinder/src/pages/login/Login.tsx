@@ -10,12 +10,15 @@ import Link from "@mui/material/Link";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
+import { useAppThemeContext } from "../../shared/contexts";
 
 // TODO
 
 export default function Login() {
   const [userInput, setUserInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
+
+  const theme = useAppThemeContext();
 
   return (
     <>

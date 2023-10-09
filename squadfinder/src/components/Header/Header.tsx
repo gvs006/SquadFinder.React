@@ -11,8 +11,8 @@ const theme = useAppThemeContext();
   return (
     <>
         <img src={theme.themeName === 'light' ? logoWhite:logoDark} alt="logo" style={{
-          width: "200px",
-        height: "200px",}} />
+          width: "300px",
+        height: "300px",}} />
         <Button onClick={theme.toggleTheme}>Toggle Mode</Button>
         </>
 
