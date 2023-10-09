@@ -22,7 +22,7 @@ export const Register = () => {
 
   return (
     <>
-      <Box width="100%" height="100vh" display="flex" justifyContent="center">
+      <Box width="100%" height="80vh" display="flex" justifyContent="center">
         <Paper
           variant={"elevation"}
           elevation={24}
