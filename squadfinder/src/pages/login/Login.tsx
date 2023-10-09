@@ -10,12 +10,27 @@ import Link from "@mui/material/Link";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-
 // TODO
 
 export default function Login() {
-  const [userInput, setUserInput] = useState("");
-  const [passwordInput, setPasswordInput] = useState("");
+
+  
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(username);
+    
+    // try {
+    //   await keycloak.login({
+    //     username,
+    //     password,
+    //   });
+    // } catch (error) {
+    //   console.error("Failed to log in", error);
+    // }
+  };
 
 
 
@@ -25,7 +40,7 @@ export default function Login() {
         <Paper variant={"elevation"} elevation={24} square={false}
         style={{minWidth:"33%", display: "flex", justifyContent:"center"}} 
         >
-          <Form>
+          <Form onSubmit={handleSubmit}>
                   <Box marginBottom="40px" display="flex" justifyContent="space-around">
                     <Tooltip title="Login com o Google">
                     <IconButton style={{ height: 48, width: 48 }}>
@@ -96,13 +111,13 @@ export default function Login() {
 
 <Box mb={3}>
             <Input
-              value={userInput}
-              onChange={(e) => setUserInput(e.target.value)}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               label="Usuário ou Email"
             />
             <Input
-              value={passwordInput}
-              onChange={(e) => setPasswordInput(e.target.value)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               label="Senha"
               type="password"
             />
