@@ -6,7 +6,6 @@ import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
-import CustomLoginButton from "../../components/CustomLoginButton/CustomLoginButton.style";
 import Link from "@mui/material/Link";
 import FormLabel from "@mui/material/FormLabel";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -93,7 +92,7 @@ export const Register = () => {
               </RadioGroup>
             </Box>
 
-            <CustomLoginButton label={"Cadastrar"} />
+            
           </Form>
         </Paper>
       </Box>

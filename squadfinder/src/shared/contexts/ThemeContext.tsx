@@ -60,9 +60,9 @@ export const AppThemeProvider: React.FC<Props> = ({ children }) => {
                 >
                     <Box 
                 width="100%" 
-                height="45vh"
+                height="auto"
                 style={headerStyle} >
-                    
+                    {/* TODO DESABILITAR A EXIBIÇÃO DO HEADER CASO ESTEJA EM ROTA PRIVADA (LOGADO) */}
                 <Header></Header>
                  </Box>
 
