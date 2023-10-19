@@ -22,13 +22,11 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async () => {};
-
   const handleLogin = async () => {
     if (email && password) {
       const isLogged = await auth.signIn(email, password);
       if(isLogged){
-        navigate("/dashboard");
+        navigate('/dashboard');
       } else {
         alert("Não deu certo")
       }
@@ -45,7 +43,7 @@ export default function Login() {
           square={false}
           style={{ width: "auto", display: "flex", justifyContent: "center" }}
         >
-          <Form onSubmit={handleSubmit}>
+          <Form>
             <Box
               marginBottom="40px"
               display="flex"

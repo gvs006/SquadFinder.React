@@ -17,10 +17,10 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
     return false;
   };
 
-  const signOut = () => {
-    // TODO VALIDAÇÃO BACKEND LOGOUT
-    // await api.logout();
+  const signOut = async () => {
+    await api.logout();
     setUser(null);
+    setToken('');
   };
 
   const setToken = (token: string) => {
@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
 
     validateToken();
 
-  },[]);
+  },[api]);
 
   return (
     <AuthContext.Provider value={{ user, signIn, signOut }}>
