@@ -8,6 +8,8 @@ export default function Dashboard () {
 
     const auth = useContext(AuthContext)
     const navigate = useNavigate();
+    const token = localStorage.getItem('authToken');
+
 
  const handleLogout = async () => {
     await auth.signOut();
@@ -17,8 +19,8 @@ export default function Dashboard () {
     
     return (
       <>
-      Seja bem vindo {auth.user?.nickname} o seu ID é {auth.user?.id}, e o seu email é {auth.user?.email}
-      {auth.user &&  <Button onClick={handleLogout}>Sair</Button>}
+      Seja bem vindo {auth.user?.nickname} o seu ID é {auth.user?.id}, e o seu login é {auth.user?.login}
+      {token &&  <Button onClick={handleLogout}>Sair</Button>}
       
       </>
      

@@ -6,7 +6,9 @@ export const RequireAuth = ({ children } : { children: JSX.Element}) => {
     
     const auth = useContext(AuthContext)
 
-    if(!auth.user) {
+    const token = localStorage.getItem('authToken');
+
+    if(!token) {
         return <Login />
     }
 

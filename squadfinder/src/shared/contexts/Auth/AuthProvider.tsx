@@ -7,9 +7,9 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
   const [user, setUser] = useState<User | null>(null);
   const api = useApi();
 
-  const signIn = async (email: string, password: string) => {
-    const data = await api.signIn(email, password);
-    if (data.user && data.token) {
+  const signIn = async (login: string, senha: string) => {
+    const data = await api.signIn(login, senha);
+    if (data.token) {
       setUser(data.user);
       setToken(data.token);
       return true;

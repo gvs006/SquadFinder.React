@@ -19,16 +19,16 @@ export default function Login() {
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [login, setLogin] = useState("");
+  const [senha, setSenha] = useState("");
 
   const handleLogin = async () => {
-    if (email && password) {
-      const isLogged = await auth.signIn(email, password);
+    if (login && senha) {
+      const isLogged = await auth.signIn(login, senha);
       if(isLogged){
         navigate('/dashboard');
       } else {
-        alert("Não deu certo")
+        alert("Erro ao logar");
       }
     }
     console.log("handleLogin ativado");
@@ -114,14 +114,14 @@ export default function Login() {
 
             <Box mb={3}>
               <Input
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={login}
+                onChange={(e) => setLogin(e.target.value)}
                 label="Usuário ou Email"
                 required
               />
               <Input
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
                 label="Digite sua senha"
                 type="password"
                 required
