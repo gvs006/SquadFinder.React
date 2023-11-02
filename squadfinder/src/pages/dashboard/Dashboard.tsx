@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 import { AuthContext } from "../../shared/contexts/Auth/AuthContext"
-import {useContext} from "react";
+import {useContext, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -16,6 +16,11 @@ export default function Dashboard () {
     navigate('/');
  }
 
+ useEffect(() => {
+  if(!token) {
+   handleLogout();
+}
+ }, []);
     
     return (
       <>

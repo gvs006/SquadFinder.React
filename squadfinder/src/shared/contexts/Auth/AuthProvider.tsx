@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
   const signIn = async (login: string, senha: string) => {
     const data = await api.signIn(login, senha);
     if (data.token) {
-      setUser(data.user);
+      setUser(data.user); // TODO FIX USER DATA FROM SPRING API
       setToken(data.token);
       return true;
     }
@@ -20,28 +20,26 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
   const signOut = async () => {
     await api.logout();
     setUser(null);
-    setToken('');
+    setToken("");
   };
 
   const setToken = (token: string) => {
-    localStorage.setItem('authToken', token)
-  }
+    localStorage.setItem("authToken", token);
+  };
 
   useEffect(() => {
-
     const validateToken = async () => {
-      const storageData = localStorage.getItem('authToken');
-      if(storageData) {
-    const data = await api.validatetoken(storageData);
-    if(data.user) {
-      setUser(data.user);
-    }
+      const storageData = localStorage.getItem("authToken");
+      if (storageData) {
+        const data = await api.validatetoken(storageData);
+        if (data.user) {
+          setUser(data.user);
+        }
       }
-    }
+    };
 
     validateToken();
-
-  },[api]);
+  }, [api]);
 
   return (
     <AuthContext.Provider value={{ user, signIn, signOut }}>

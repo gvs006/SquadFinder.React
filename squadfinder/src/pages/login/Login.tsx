@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect, useMemo } from "react";
 import Input from "../../components/Input/Input";
 import { Form } from "../../components/Form/Form";
 import Box from "@mui/material/Box";
@@ -12,30 +12,64 @@ import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button/Button";
 import { AuthContext } from "../../shared/contexts/Auth/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { Header } from "../../components/Header/Header";
+import Image from "../../assets/login/hero-bg-pqn.jpg";
+import { LightTheme, DarkTheme } from "../../shared/themes/";
+import { useAppThemeContext } from "../../shared/contexts";
+
 
 // TODO REFATORAÇÃO
 
 export default function Login() {
+
+
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const theme = useAppThemeContext();
+  const themeName = theme.themeName;
 
   const [login, setLogin] = useState("");
   const [senha, setSenha] = useState("");
 
   const handleLogin = async () => {
+    console.log("Tentando logar...");
     if (login && senha) {
       const isLogged = await auth.signIn(login, senha);
-      if(isLogged){
-        navigate('/dashboard');
-      } else {
-        alert("Erro ao logar");
-      }
+      // if(isLogged){
+      //   navigate('/dashboard');
+      // } else {
+      //   console.log("isLogged retornou", isLogged);
+      // }
+      isLogged ? navigate('/dashboard') : console.log("isLogged retornou", isLogged);
+        
     }
-    console.log("handleLogin ativado");
+    
   };
+
+
+  const headerStyle = {
+    backgroundImage: themeName !== 'dark' ? `linear-gradient(180deg, #00000011 0%, #ffffff 88.02%), url(${Image})` : `linear-gradient(180deg, #00000011 0%, #020000 88.02%), url(${Image})`,
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize:"100% auto",
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+};
+
 
   return (
     <>
+
+<Box 
+                width="100%" 
+                height="auto"
+                style={headerStyle} >
+                    <Header></Header>
+                 </Box>
+    
       <Box width="100%" height="55vh" display="flex" justifyContent="center">
         <Paper
           variant={"elevation"}

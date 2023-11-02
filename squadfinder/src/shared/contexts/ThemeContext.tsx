@@ -2,9 +2,7 @@ import { createContext, useCallback, useContext, useMemo, useState } from "react
 import { ThemeProvider } from "@emotion/react";
 import { LightTheme, DarkTheme } from "../themes";
 import Box from "@mui/material/Box";
-import logo from "../../assets/login/logo-full-white.png";
-import Image from "../../assets/login/hero-bg-pqn.jpg";
-import { Header } from "../../components/Header/Header";
+
 
 type Props = {
     children?: React.ReactNode
@@ -35,16 +33,7 @@ export const AppThemeProvider: React.FC<Props> = ({ children }) => {
      return DarkTheme;
     },[themeName]);
 
-    const headerStyle = {
-        backgroundImage: themeName !== 'dark' ? `linear-gradient(180deg, #00000011 0%, #ffffff 88.02%), url(${Image})` : `linear-gradient(180deg, #00000011 0%, #020000 88.02%), url(${Image})`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize:"100% auto",
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-    };
+   
 
 
     return ( 
@@ -58,13 +47,7 @@ export const AppThemeProvider: React.FC<Props> = ({ children }) => {
                     background: theme.palette.background.default,
                 }}
                 >
-                    <Box 
-                width="100%" 
-                height="auto"
-                style={headerStyle} >
-                    {/* TODO DESABILITAR A EXIBIÇÃO DO HEADER CASO ESTEJA EM ROTA PRIVADA (LOGADO) */}
-                <Header></Header>
-                 </Box>
+                    
 
                     {children}
                 </Box>

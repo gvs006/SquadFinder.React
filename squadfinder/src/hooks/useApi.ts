@@ -7,9 +7,7 @@ const api = axios.create({
 
 export const useApi = () => ({
   validatetoken: async (token: string) => {
-
-    //TODO VALIDAR RETORNO TOKEN BACKEND
-    
+    return true;
     const response = await api.post("/token", { token });
     return response.data;
   },
