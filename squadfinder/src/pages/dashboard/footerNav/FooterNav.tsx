@@ -12,13 +12,24 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../shared/contexts/Auth/AuthContext';
 
 const pages = ['Início', 'Chats'];
 const settings = ['Perfil', 'Configurações', 'Sobre', 'Desconectar'];
 
 function FooterNav() {
+    const auth = useContext(AuthContext)
+    const navigate = useNavigate();
+    
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+
+  const handleLogout = async () => {
+    await auth.signOut();
+    navigate('/');
+ }
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -130,11 +141,17 @@ function FooterNav() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+            
+                <MenuItem onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">Perfil</Typography>
                 </MenuItem>
-              ))}
+                <MenuItem onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">Configurações</Typography>
+                </MenuItem>
+                <MenuItem onClick={handleLogout}>
+                  <Typography textAlign="center">Desconectar</Typography>
+                </MenuItem>
+            
             </Menu>
           </Box>
         </Toolbar>

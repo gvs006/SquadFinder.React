@@ -4,7 +4,6 @@ import {useContext, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { useAppThemeContext } from "../../shared/contexts";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import FooterNav from "./footerNav/FooterNav";
 
 
@@ -16,11 +15,12 @@ export default function Dashboard () {
     const theme = useAppThemeContext();
 
 
- const handleLogout = async () => {
-    await auth.signOut();
-    navigate('/');
- }
 
+    const handleLogout = async () => {
+      await auth.signOut();
+      navigate('/');
+   }
+  
  useEffect(() => {
   if(!token) {
    handleLogout();
@@ -36,8 +36,8 @@ export default function Dashboard () {
                 >
 
                   
-      Seja bem vindo {auth.user?.nickname} o seu ID é {auth.user?.id}, e o seu login é {auth.user?.login}
-      {token &&  <Button onClick={handleLogout}>Sair</Button>}
+      Seja bem vindo {auth.user?.nickname ? auth.user?.nickname : " #NICKNAME "} o seu ID é {auth.user?.id ? auth.user?.id : " #ID "}, e o seu login é {auth.user?.login ? auth.user?.login : " #LOGIN "}
+      
       <FooterNav></FooterNav>
       </Box>
       
