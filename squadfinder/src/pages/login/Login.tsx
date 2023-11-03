@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, useMemo } from "react";
+import { useState, useContext } from "react";
 import Input from "../../components/Input/Input";
 import { Form } from "../../components/Form/Form";
 import Box from "@mui/material/Box";
@@ -14,7 +14,6 @@ import { AuthContext } from "../../shared/contexts/Auth/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../../components/Header/Header";
 import Image from "../../assets/login/hero-bg-pqn.jpg";
-import { LightTheme, DarkTheme } from "../../shared/themes/";
 import { useAppThemeContext } from "../../shared/contexts";
 
 
@@ -36,13 +35,11 @@ export default function Login() {
     console.log("Tentando logar...");
     if (login && senha) {
       const isLogged = await auth.signIn(login, senha);
-      // if(isLogged){
-      //   navigate('/dashboard');
-      // } else {
-      //   console.log("isLogged retornou", isLogged);
-      // }
+      
       isLogged ? navigate('/dashboard') : console.log("isLogged retornou", isLogged);
         
+    } else {
+      alert('Campos obrigatórios');
     }
     
   };

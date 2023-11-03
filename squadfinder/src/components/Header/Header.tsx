@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import logoWhite from "../../assets/login/logo-full-white.png";
 import logoDark from "../../assets/login/logo-full.png";
-import { AppThemeProvider, useAppThemeContext } from "../../shared/contexts/ThemeContext";
-import styled from "@emotion/styled";
+import {  useAppThemeContext } from "../../shared/contexts/ThemeContext";
+
 import Button from "@mui/material/Button";
 
 

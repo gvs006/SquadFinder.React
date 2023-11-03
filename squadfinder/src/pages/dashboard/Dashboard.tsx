@@ -2,6 +2,10 @@ import Button from "@mui/material/Button";
 import { AuthContext } from "../../shared/contexts/Auth/AuthContext"
 import {useContext, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
+import Box from "@mui/material/Box";
+import { useAppThemeContext } from "../../shared/contexts";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import FooterNav from "./footerNav/FooterNav";
 
 
 export default function Dashboard () {
@@ -9,6 +13,7 @@ export default function Dashboard () {
     const auth = useContext(AuthContext)
     const navigate = useNavigate();
     const token = localStorage.getItem('authToken');
+    const theme = useAppThemeContext();
 
 
  const handleLogout = async () => {
@@ -23,11 +28,20 @@ export default function Dashboard () {
  }, []);
     
     return (
-      <>
+      
+      <Box 
+                height="100vh"
+                width="auto"
+                bgcolor="skygrey"
+                >
+
+                  
       Seja bem vindo {auth.user?.nickname} o seu ID é {auth.user?.id}, e o seu login é {auth.user?.login}
       {token &&  <Button onClick={handleLogout}>Sair</Button>}
+      <FooterNav></FooterNav>
+      </Box>
       
-      </>
+      
      
     )
 }
