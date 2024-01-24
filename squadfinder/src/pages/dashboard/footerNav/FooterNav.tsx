@@ -25,6 +25,7 @@ function FooterNav() {
     
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const [openModalSettings, setOpenModalSettings] = React.useState<null | HTMLElement>(null);
 
   const handleLogout = async () => {
     await auth.signOut();
@@ -46,8 +47,17 @@ function FooterNav() {
     setAnchorElUser(null);
   };
 
+  const handleSettings = () => {
+    // setOpenModalSettings(true);
+    setAnchorElUser(null);
+  }
+
+  const handleCloseSettings =() => {
+    // setOpenModalSettings(false);
+  }
+
   return (
-    <AppBar position="fixed"  sx={{bottom:0, top:"auto", height: "80px"}}  >
+    <AppBar position="fixed"  sx={{bottom:0, top:"auto", height: "70px"}}  >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           
@@ -120,7 +130,7 @@ function FooterNav() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title="Usuário">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
@@ -145,7 +155,7 @@ function FooterNav() {
                 <MenuItem onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">Perfil</Typography>
                 </MenuItem>
-                <MenuItem onClick={handleCloseUserMenu}>
+                <MenuItem onClick={handleSettings}>
                   <Typography textAlign="center">Configurações</Typography>
                 </MenuItem>
                 <MenuItem onClick={handleLogout}>
