@@ -56,6 +56,7 @@ export default function Login() {
     justifyContent: "center"
 };
 
+const paperStyle = {width: "auto", display: "flex", justifyContent: "center", backgroundColor: themeName !== 'dark' ? "#00000011" : "#ffffff" }
 
   return (
     <>
@@ -72,7 +73,7 @@ export default function Login() {
           variant={"elevation"}
           elevation={24}
           square={false}
-          style={{ width: "auto", display: "flex", justifyContent: "center" }}
+          style={paperStyle}
         >
           <Form>
             <Box
