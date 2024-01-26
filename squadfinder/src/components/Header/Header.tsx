@@ -14,6 +14,8 @@ import FormControlLabel from "@mui/material/FormControlLabel/FormControlLabel";
 export const Header = () => {
 const theme = useAppThemeContext();
 
+//TODO SALVAR NOS COOKIESS
+
 const saveTheme = () => {
   alert("Em desenvolvimento");
 };
@@ -36,7 +38,7 @@ const saveTheme = () => {
   </RadioGroup>
 </FormControl>
 
-<Button onClick={saveTheme}>Salvar nos Cookies</Button>
+{/* <Button onClick={saveTheme}>Salvar nos Cookies</Button> */}
         </>
 
         
